@@ -34,7 +34,7 @@ init_uart_baud=9600
 ```console
 sudo apt-get update
 sudo apt-get upgrade -y
-sudo apt-get install libssl-dev libffi-dev gpsd gpsd-clients minicom git python-nmea2 python python-dev python-pip python-gps python-serial -y
+sudo apt-get install libssl-dev libffi-dev gpsd gpsd-clients minicom git python3 python3-nmea2 python3-dev python3-pip python3-serial -y
 ```
 
 ## Configure baud rate
@@ -70,8 +70,8 @@ cgps -s
 ### Python example
 ```console
 cd /tmp
-git git@github.com:plakna/raspberry-pi-gps-neo-6m.git
+git clone git@github.com:plakna/raspberry-pi-gps-neo-6m.git
 cd raspberry-pi-gps-neo-6m/examples
 
-python gps.py
+python3 gps.py
 ```

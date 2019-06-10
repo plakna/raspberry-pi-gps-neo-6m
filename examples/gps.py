@@ -1,4 +1,4 @@
-import serial
+mport serial
 import pynmea2
 
 def parse_gps(line):
@@ -6,10 +6,9 @@ def parse_gps(line):
     print((msg.timestamp, msg.latitude, msg.longitude))
 
 
-serialPort = serial.Serial("/dev/ttyAMA0", 9600, timeout=5)
+serial_port = serial.Serial('/dev/ttyAMA0', 9600, timeout=5)
 while True:
-    line = serialPort.readline()
+    line = serial_port.readline().decode('unicode_escape')
 
-    if line.find('GGA') > 0:
+    if 'GGA' in line:
         parse_gps(line)
-        
